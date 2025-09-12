@@ -1,6 +1,8 @@
 #pragma once
 
-struct Point {
-    int x;
-    int y;
+enum Direction {
+    Up,
+    Down,
+    Left,
+    Right
 };
