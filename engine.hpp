@@ -1,14 +1,10 @@
 #pragma once
-#include "apple.hpp"
-#include "snake.hpp"
-#include "board.hpp"
+#include "Apple.hpp"
+#include "Snake.hpp"
+#include "Board.hpp"
 
-class GameEngine {
-   Apple _apple;
-   Snake _snake;
-   Board _board;
-public:
-   GameEngine();
-   void Init();
-   void Run();
+struct GameEngine {
+    Apple apple;
+    Snake snake;
+    Board board;
 };

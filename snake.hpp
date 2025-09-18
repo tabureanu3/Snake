@@ -1,18 +1,8 @@
 #pragma once
+#pragma once
 #include "Point.hpp"
-#include "Direction.hpp"
-#include "Apple.hpp"
 
-class Snake {
-public:
-    Point segments[100];
-    int nr_segments;
-
-    Snake();                    
-    Snake(const Point& pos);    
-
-    void Move(Direction dir);  
-    int GetSize() const;       
-    Point GetPosition() const;  
-    void Eat(const Apple& apple);
+struct Snake {
+    Point segments[50]; // șarpele are max 50 de segmente
+    int length;         // câte segmente are acum
 };
