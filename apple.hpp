@@ -7,3 +7,4 @@ public:
     Apple();
     Apple(int x, int y);
 };
+ 

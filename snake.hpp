@@ -16,5 +16,3 @@ public:
     Point GetPosition() const;  
     void Eat(const Apple& apple);
 };
-11
-
