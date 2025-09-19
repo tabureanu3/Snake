@@ -13,14 +13,16 @@ Acest proiect implementează jocul **Snake**, unde jucătorul controlează un ș
 5. Scopul este obținerea celui mai mare scor posibil
 
 ## Tipuri de date declarate:
-Proiectul folosește următoarele tipuri de date: 
+Numere întregi (int) – pentru coordonate, dimensiunile tablei și lungimea șarpelui;
 
--Numere întregi (int) pentru coordonate și lungimi;
+Structura Point – pentru a reprezenta poziții pe tablă (x, y);
 
--Structura Point pentru poziții;
+Structura Apple – pentru obiectul măr, ce are doar poziția sa;
 
--Clasele Apple și Snake pentru obiectele jocului; 
+Structura Snake – pentru șarpe, care conține segmentele (Point[]) și lungimea curentă;
 
--Direction pentru direcțiile de mișcare;
+Structura Board – pentru tabla de joc (lățime și înălțime);
 
--Un array Point pentru segmentele șarpelui și referințe constante (const Point& și const Apple&) pentru a trece obiectele fără a le copia.
+Enum-ul Direction – pentru direcțiile de mișcare (sus, jos, stânga, dreapta);
+
+Array de tip Point – pentru segmentele șarpelui.
