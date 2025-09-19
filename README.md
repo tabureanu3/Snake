@@ -23,4 +23,4 @@ Proiectul folosește următoarele tipuri de date:
 
 -Direction pentru direcțiile de mișcare;
 
--Un array Point[100] pentru segmentele șarpelui și referințe constante (const Point& și const Apple&) pentru a trece obiectele fără a le copia.
+-Un array Point pentru segmentele șarpelui și referințe constante (const Point& și const Apple&) pentru a trece obiectele fără a le copia.
