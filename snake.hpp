@@ -15,4 +15,4 @@ public:
     int GetSize() const;       
     Point GetPosition() const;  
     void Eat(const Apple& apple);
-};
+}; 
