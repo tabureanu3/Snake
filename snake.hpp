@@ -1,18 +1,12 @@
 #pragma once
 #include "Point.hpp"
 #include "Direction.hpp"
-#include "Apple.hpp"
 
-class Snake {
-public:
-    Point segments[100];
-    int nr_segments;
+struct Snake {
+    Point segments[20];  // pozițiile corpului
+    int length;          // lungimea curentă
 
-    Snake();                    
-    Snake(const Point& pos);    
-
-    void Move(Direction dir);  
-    int GetSize() const;       
-    Point GetPosition() const;  
-    void Eat(const Apple& apple);
-}; 
+    Snake();             // constructor
+    void Move(Direction dir);
+    Point Head() const;
+};
