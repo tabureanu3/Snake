@@ -1,26 +1,33 @@
-##  SnakeGame
+# Snake Game 
 
-## Ce reprezintă proiectul?
-Acest proiect implementează jocul **Snake**, unde jucătorul controlează un șarpe care se deplasează pe ecran, colectează mere și devine tot mai lung. Scopul jocului este să acumulezi cât mai multe puncte evitând atingerea cu pereții sau cu propriul corp.
+## Descriere
 
-## Regulile jocului Snake:
-1. Șarpele se deplasează pe ecran într-o anumită direcție (sus, jos, stânga, dreapta)
-2. Jucătorul controlează direcția șarpelui folosind tastele 
-3. Atunci când șarpele mănâncă merele, lungimea lui crește și scorul jucătorului crește
-4. Jocul se termină dacă:
- Șarpele se lovește de marginea ecranului.
- Șarpele se lovește de propriul corp.
-5. Scopul este obținerea celui mai mare scor posibil
+Acesta este un proiect simplu în C++ care implementează jocul Snake.
+Scopul jocului este să controlezi șarpele, să mănânci mere și să eviți coliziunile cu pereții sau cu propriul corp.
 
-## Tipuri de date declarate:
-Proiectul folosește următoarele tipuri de date: 
+## Cum compilezi pe Windows?
 
--Numere întregi (int) pentru coordonate și lungimi;
+Asigură-te că ai instalat g++ (de exemplu din MinGW).
 
--Structura Point pentru poziții;
+Deschide Command Prompt în folderul proiectului.
 
--Clasele Apple și Snake pentru obiectele jocului; 
+Rulează comanda: 
 
--Direction pentru direcțiile de mișcare;
+```cmd
+build.cmd
+```
 
--Un array Point pentru segmentele șarpelui și referințe constante (const Point& și const Apple&) pentru a trece obiectele fără a le copia.
+, se va genera executabilul snake.exe.
+
+## Cum rulezi?
+
+După compilare, rulează: `snake.exe`.
+
+## Structura proiectului
+
+
+- `*.hpp` – fișiere header cu declarațiile structurilor și claselor.
+- `*.cpp` – fișiere sursă cu implementarea metodelor.
+- `build.cmd` – script pentru compilare manuală.
+- `.gitignore` – ignoră fișierele obiect și executabilele.
+- `README.md` – instrucțiuni de utilizare.

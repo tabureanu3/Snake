@@ -4,3 +4,4 @@
 struct Apple {
     Point pos;
 };
+ 
