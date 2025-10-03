@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 #include "Point.hpp"
 #include "Direction.hpp"
 
