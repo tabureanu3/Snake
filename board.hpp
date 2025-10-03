@@ -1,10 +1,7 @@
 #pragma once
 
-class Board {
-   int _width;
-   int _height;
-public:
-   Board(int width = 35, int height = 35);
-   int GetWidth() const;
-   int GetHeight() const;
-};  
+struct Board {
+    int width;
+    int height;
+    Board(int w = 20, int h = 20);
+};

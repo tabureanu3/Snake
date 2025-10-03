@@ -11,4 +11,7 @@ public:
    GameEngine();
    void Init();
    void Run();
+   const Snake& getSnake() const { return _snake; }
+   const Apple& getApple() const { return _apple; }
+   const Board& getBoard() const { return _board; }
 }; 
