@@ -17,5 +17,7 @@ int main() {
               << game.getBoard().width << "x" 
               << game.getBoard().height << "\n";
 
+    game.Run();
+
     return 0;
 }

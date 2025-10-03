@@ -1,15 +1,13 @@
-#include "Point.hpp"
+#include "snake.hpp"
 
-enum Direction { Up, Down, Left, Right };
+Snake::Snake()
+{
+    length = 1;
+    segments[0] = {5, 5}; // poziția inițială a capului
+}
 
-class Snake {
-public:
-    Snake();
-    void Move(Direction dir);
-    Point Head() const;
+void Snake::Move(Direction dir) {}
 
-private:
-    static const int MAX_LENGTH = 100; // să definim un maxim
-    Point segments[MAX_LENGTH];
-    int length;
-};
+Point Snake::Head() const {
+    return segments[0];
+}
