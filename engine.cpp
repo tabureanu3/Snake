@@ -1,8 +1,27 @@
 #include "GameEngine.hpp"
+#include <windows.h>
+#include <algorithm>
+#include <iostream>
 
-GameEngine::GameEngine() : board(20, 20), apple(5, 5), snake() {}
+GameEngine::GameEngine() {
+   
+}
 
 void GameEngine::Init() {
-    snake = Snake();
-    apple = Apple(10, 10);
+    
+}
+
+void GameEngine::Run() {
+    bool running = true;
+    while (running) {
+       
+        Sleep(200); 
+    }
+}
+
+int main() {
+    GameEngine game;
+    game.Init();
+    game.Run();
+    return 0;
 }

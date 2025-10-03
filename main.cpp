@@ -1,21 +1,21 @@
 #include <iostream>
-#include "GameEngine.hpp"
+#include "engine.hpp"
 
 int main() {
     GameEngine game;
     game.Init();
 
     std::cout << "Snake head: (" 
-              << game.snake.Head().x << ", " 
-              << game.snake.Head().y << ")\n";
+              << game.getSnake().Head().x << ", " 
+              << game.getSnake().Head().y << ")\n";
 
     std::cout << "Apple: (" 
-              << game.apple.pos.x << ", " 
-              << game.apple.pos.y << ")\n";
+              << game.getApple().pos.x << ", " 
+              << game.getApple().pos.y << ")\n";
 
     std::cout << "Board size: " 
-              << game.board.width << "x" 
-              << game.board.height << "\n";
+              << game.getBoard().width << "x" 
+              << game.getBoard().height << "\n";
 
     return 0;
 }

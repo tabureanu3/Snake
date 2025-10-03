@@ -1,26 +1,15 @@
-#include "Snake.hpp"
+#include "Point.hpp"
 
-Snake::Snake() {
-    length = 1;
-    segments[0] = {0, 0};
-}
+enum Direction { Up, Down, Left, Right };
 
-void Snake::Move(Direction dir) {
-    Point head = segments[0];
+class Snake {
+public:
+    Snake();
+    void Move(Direction dir);
+    Point Head() const;
 
-    if (dir == Up) head.y--;
-    else if (dir == Down) head.y++;
-    else if (dir == Left) head.x--;
-    else if (dir == Right) head.x++;
-
-    
-    for (int i = length; i > 0; --i) {
-        segments[i] = segments[i - 1];
-    }
-
-    segments[0] = head;
-}
-
-Point Snake::Head() const {
-    return segments[0];
-}
+private:
+    static const int MAX_LENGTH = 100; // să definim un maxim
+    Point segments[MAX_LENGTH];
+    int length;
+};
