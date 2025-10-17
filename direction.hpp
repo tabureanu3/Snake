@@ -5,4 +5,4 @@ enum Direction {
     Down,
     Left,
     Right
-}; 
+};
