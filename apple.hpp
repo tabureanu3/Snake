@@ -1,7 +1,9 @@
 #pragma once
 #include "Point.hpp"
+#include <iostream>
 
-struct Apple {
+class Apple {
+public:
     Point pos;
 
     Apple();

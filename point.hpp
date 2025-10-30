@@ -1,11 +1,11 @@
 #pragma once
 #include <iostream>
 
-struct Point {
-    int x;
-    int y;
+class Point {
+public:
+    int x, y;
 
-    Point(int px = 0, int py = 0);
+    Point(int x = 0, int y = 0);
     Point(const Point& other);
     Point& operator=(const Point& other);
 

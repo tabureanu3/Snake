@@ -1,20 +1,16 @@
 #include "Board.hpp"
+#include <algorithm>
 
 Board::Board(int w, int h) : width(w), height(h) {}
-Board::Board(const Board& other) : width(other.width), height(other.height) {}
 
-Board& Board::operator=(const Board& other) {
-    if (this != &other) {
-        width = other.width;
-        height = other.height;
-    }
-    return *this;
+void Board::AddApple(const Point& p) {
+    apples.push_back(p);
 }
 
-bool Board::operator==(const Board& other) const {
-    return width == other.width && height == other.height;
+bool Board::HasApple(const Point& p) const {
+    return std::find(apples.begin(), apples.end(), p) != apples.end();
 }
 
-bool Board::operator!=(const Board& other) const {
-    return !(*this == other);
+void Board::RemoveApple(const Point& p) {
+    apples.erase(std::remove(apples.begin(), apples.end(), p), apples.end());
 }

@@ -1,6 +1,6 @@
 #include "Point.hpp"
 
-Point::Point(int px, int py) : x(px), y(py) {}
+Point::Point(int x, int y) : x(x), y(y) {}
 Point::Point(const Point& other) = default;
 Point& Point::operator=(const Point& other) = default;
 
