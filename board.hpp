@@ -1,13 +1,18 @@
 #pragma once
+#include <vector>
+#include "Point.hpp"
 
-struct Board {
-    int width;
-    int height;
-
+class Board {
+private:
+    int width, height;
+    std::vector<Point> apples;
+public:
     Board(int w = 20, int h = 20);
-    Board(const Board& other);
-    Board& operator=(const Board& other);
 
-    bool operator==(const Board& other) const;
-    bool operator!=(const Board& other) const;
+    void AddApple(const Point& p);
+    bool HasApple(const Point& p) const;
+    void RemoveApple(const Point& p);
+
+    int GetWidth() const { return width; }
+    int GetHeight() const { return height; }
 };
