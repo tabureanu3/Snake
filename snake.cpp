@@ -1,46 +1,38 @@
 #include "Snake.hpp"
+#include <algorithm>
 
 Snake::Snake() {
-    length = 1;
-    segments[0] = {5, 5};
+    segments.push_back({5, 5});
 }
 
-Snake::Snake(const Snake& other) {
-    length = other.length;
-    for (int i = 0; i < length; i++) segments[i] = other.segments[i];
-}
-
+Snake::Snake(const Snake& other) : segments(other.segments) {}
 Snake& Snake::operator=(const Snake& other) {
-    if (this != &other) {
-        length = other.length;
-        for (int i = 0; i < length; i++) segments[i] = other.segments[i];
-    }
+    if (this != &other)
+        segments = other.segments;
     return *this;
 }
 
 void Snake::Move(Direction dir) {
-    Point newHead = segments[0];
+    Point newHead = segments.front();
     switch (dir) {
         case Up:    newHead.y--; break;
         case Down:  newHead.y++; break;
         case Left:  newHead.x--; break;
         case Right: newHead.x++; break;
     }
-    for (int i = length - 1; i > 0; i--) segments[i] = segments[i - 1];
+
+    if (segments.size() > 1)
+        std::rotate(segments.rbegin(), segments.rbegin() + 1, segments.rend());
     segments[0] = newHead;
 }
 
 Point Snake::Head() const {
-    return segments[0];
+    return segments.front();
 }
 
 bool Snake::operator==(const Snake& other) const {
-    if (length != other.length) return false;
-    for (int i = 0; i < length; i++)
-        if (segments[i] != other.segments[i]) return false;
-    return true;
+    return segments == other.segments;
 }
-
 bool Snake::operator!=(const Snake& other) const {
     return !(*this == other);
 }

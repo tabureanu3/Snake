@@ -1,21 +1,24 @@
 #pragma once
-#include "Apple.hpp"
+#include <memory>
 #include "Snake.hpp"
+#include "Apple.hpp"
 #include "Board.hpp"
-#include "painter.hpp"
+#include "Painter.hpp"
 
 class GameEngine {
-    Apple _apple;
-    Snake _snake;
-    Board _board;
+private:
+    std::unique_ptr<Snake> _snake;
+    std::unique_ptr<Apple> _apple;
+    std::unique_ptr<Board> _board;
     Painter2D _painter;
 
 public:
     GameEngine();
+
     void Init();
     void Run();
 
-    const Snake& getSnake() const { return _snake; }
-    const Apple& getApple() const { return _apple; }
-    const Board& getBoard() const { return _board; }
+    Snake& getSnake();
+    Apple& getApple();
+    Board& getBoard();
 };

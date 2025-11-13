@@ -1,9 +1,9 @@
 #pragma once
-#include "abstract_painter.hpp"
-#include <iostream>
+#include "Point.hpp"
+#include <string>
 
-class Painter2D : public AbstractPainter {
+class Painter2D {
 public:
-    void RenderSprite(Point from, Point to, char** sprite) override;
-    void DisplayText(Point at, const char* message) override;
+    void RenderSprite(const Point& from, const Point& to, const std::string& sprite);
+    void DisplayText(const Point& at, const std::string& message);
 };

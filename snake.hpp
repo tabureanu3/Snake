@@ -1,11 +1,13 @@
 #pragma once
+#include <vector>
 #include "Point.hpp"
-#include "Direction.hpp"
 
-struct Snake {
-    Point segments[20];
-    int length;
+enum Direction { Up, Down, Left, Right };
 
+class Snake {
+private:
+    std::vector<Point> segments;
+public:
     Snake();
     Snake(const Snake& other);
     Snake& operator=(const Snake& other);

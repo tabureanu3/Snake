@@ -1,6 +1,6 @@
 CC = g++
-CXXFLAGS = -O2 -std=c++20 -I include
-LDFLAGS = -L lib
+CXXFLAGS = -O2 -std=c++20 -I. -Iinclude
+LDFLAGS = 
 
 BINDIR = bin
 SRCDIR = .
@@ -20,10 +20,10 @@ clean:
 	rm -f $(OBJDIR)/*.o $(BINDIR)/*
 
 help:
-	@echo Usage:
-	echo make - asamblează aplicația
-	echo make clean - elimină artefactele asamblării
-	echo make help - afișează ajutorul
+	@echo "Usage:"
+	@echo "  make         - compilează aplicația"
+	@echo "  make clean   - șterge fișierele temporare"
+	@echo "  make help    - afișează acest mesaj"
 
 $(APP): $(OBJ)
 	$(CC) $(OBJ) -o $(BINDIR)/$(APP) $(LDFLAGS)
