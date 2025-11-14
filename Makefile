@@ -23,7 +23,7 @@ OTHER_SRCS = \
 
 OTHER_OBJS = $(OTHER_SRCS:%.cpp=$(OBJDIR)/%.o)
 
-LIB = libsnake_data.a
+LIB = $(BINDIR)/libsnake_data.a
 TARGET = $(BINDIR)/Snake.exe
 
 all: prepare $(LIB) $(TARGET)
