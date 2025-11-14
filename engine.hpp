@@ -7,9 +7,9 @@
 
 class GameEngine {
 private:
-    std::unique_ptr<Snake> _snake;
-    std::unique_ptr<Apple> _apple;
-    std::unique_ptr<Board> _board;
+    Snake _snake;
+    Apple _apple;
+    Board _board;
     Painter2D _painter;
 
 public:
@@ -18,7 +18,7 @@ public:
     void Init();
     void Run();
 
-    Snake& getSnake();
-    Apple& getApple();
-    Board& getBoard();
+    Snake GetSnake() const;
+    Apple GetApple() const;
+    Board GetBoard() const;
 };

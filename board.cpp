@@ -7,9 +7,9 @@ void Board::AddApple(const Point& p) {
     apples.push_back(p);
 
     std::sort(apples.begin(), apples.end(), [](const Point& a, const Point& b) {
-        if (a.x == b.x)
-            return a.y < b.y;
-        return a.x < b.x;
+        if (a.GetX() == b.GetX())
+            return a.GetY() < b.GetY();
+        return a.GetX() < b.GetX();
     });
 }
 

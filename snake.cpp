@@ -15,10 +15,10 @@ Snake& Snake::operator=(const Snake& other) {
 void Snake::Move(Direction dir) {
     Point newHead = segments.front();
     switch (dir) {
-        case Up:    newHead.y--; break;
-        case Down:  newHead.y++; break;
-        case Left:  newHead.x--; break;
-        case Right: newHead.x++; break;
+        case Up:    newHead = Point(newHead.GetX(), newHead.GetY() - 1); break;
+        case Down:  newHead = Point(newHead.GetX(), newHead.GetY() + 1); break;
+        case Left:  newHead = Point(newHead.GetX() - 1, newHead.GetY()); break;
+        case Right: newHead = Point(newHead.GetX() + 1, newHead.GetY()); break;
     }
 
     if (segments.size() > 1)
