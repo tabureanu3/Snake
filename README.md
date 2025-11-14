@@ -5,19 +5,27 @@
 Acesta este un proiect simplu în C++ care implementează jocul Snake.
 Scopul jocului este să controlezi șarpele, să mănânci mere și să eviți coliziunile cu pereții sau cu propriul corp.
 
+Jocul este dependent de biblioteca `raylib` pentru grafică și input.
+
 ## Cum compilezi pe Windows?
 
 Asigură-te că ai instalat g++ (de exemplu din MinGW).
 
-Deschide Command Prompt în folderul proiectului.
+Descarcati biblioteca raylib de la [raylib.com](https://www.raylib.com/) și plasează fișierele in directorul `dependencies/gcc-raylib/`. Trebuie sa obtineti următoarea structură de directoare:
 
-Rulează comanda:
+```
+Snake/
+├── dependencies/gcc-raylib/
+│   ├── include/
+│   │   └── raylib.h
+│   └── lib/
+│       ├── libraylib.a
+│       ├── libraylib.dll.a
+│       └── raylib.dll
 
-```cmd
-build.cmd
 ```
 
-, se va genera executabilul snake.exe.
+Deschide Command Prompt în folderul proiectului.
 
 ### Solutii universale
 

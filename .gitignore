@@ -11,6 +11,7 @@
 bin/
 obj/
 build/
+dependencies/
 
 # Ignore IDE specific files
 .vscode/

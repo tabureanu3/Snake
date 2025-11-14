@@ -2,14 +2,10 @@
 #include <iostream>
 
 int main() {
-    GameEngine game;
+    int width = 30;
+    int height = 20;
+    GameEngine game(width, height);
     game.Init();
-
-    std::cout << "Snake head: " << game.GetSnake().Head() << "\n";
-    std::cout << "Apple: " << game.GetApple().GetPosition() << "\n";
-    std::cout << "Board size: " 
-              << game.GetBoard().GetWidth() << "x" 
-              << game.GetBoard().GetHeight() << "\n";
     game.Run();
     return 0;
 }
