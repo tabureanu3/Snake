@@ -6,6 +6,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # optimize for size in release mode
 set(CMAKE_CXX_FLAGS_RELEASE "-Os")
 
+# include library from dependency folder
+include_directories(${CMAKE_SOURCE_DIR}/dependency/msvc-raylib/include)
+link_directories(${CMAKE_SOURCE_DIR}/dependency/msvc-raylib/lib)
+
 add_library(snake_data SHARED
     "point.cpp"
     "apple.cpp"
@@ -16,7 +20,7 @@ add_library(snake_data SHARED
 # create import library for Windows
 set_target_properties(snake_data PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
-file(GLOB SOURCES "painter.cpp" "engine.cpp" "main.cpp")
+file(GLOB SOURCES "RaylibPainter.cpp" "engine.cpp" "main.cpp")
 add_executable(Snake ${SOURCES})
 
-target_link_libraries(Snake snake_data) # Leagă bibliotecile
+target_link_libraries(Snake snake_data raylib) # Leagă bibliotecile
