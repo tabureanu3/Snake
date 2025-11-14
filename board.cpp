@@ -1,26 +1,24 @@
 #include "Board.hpp"
-#include <algorithm>  
+#include <cstdlib>  
 
-Board::Board(int w, int h) : width(w), height(h) {}
-
-void Board::AddApple(const Point& p) {
-    apples.push_back(p);
-
-    std::sort(apples.begin(), apples.end(), [](const Point& a, const Point& b) {
-        if (a.x == b.x)
-            return a.y < b.y;
-        return a.x < b.x;
-    });
+Board::Board(int w, int h) : width(w), height(h) {
+    srand(static_cast<unsigned int>(time(0))); // Seed for randomness
 }
 
-bool Board::HasApple(const Point& p) const {
-    return std::any_of(apples.begin(), apples.end(),
-                       [&](const Point& a) { return a == p; });
+Point Board::GetRandomPosition() const {
+    // Simple implementation for demonstration purposes
+    return Point(rand() % width, rand() % height);
 }
 
-void Board::RemoveApple(const Point& p) {
+bool Board::IsInside(const Point& p) const {
+    return p.GetX() >= 0 && p.GetX() < width 
+        && p.GetY() >= 0 && p.GetY() < height;
+}
 
-    apples.erase(std::remove_if(apples.begin(), apples.end(),
-                                [&](const Point& a) { return a == p; }),
-                 apples.end());
+int Board::GetWidth() const {
+    return width;
+}
+
+int Board::GetHeight() const {
+    return height;
 }

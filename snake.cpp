@@ -15,10 +15,10 @@ Snake& Snake::operator=(const Snake& other) {
 void Snake::Move(Direction dir) {
     Point newHead = segments.front();
     switch (dir) {
-        case Up:    newHead.y--; break;
-        case Down:  newHead.y++; break;
-        case Left:  newHead.x--; break;
-        case Right: newHead.x++; break;
+        case Direction::Up:    newHead = Point(newHead.GetX(), newHead.GetY() - 1); break;
+        case Direction::Down:  newHead = Point(newHead.GetX(), newHead.GetY() + 1); break;
+        case Direction::Left:  newHead = Point(newHead.GetX() - 1, newHead.GetY()); break;
+        case Direction::Right: newHead = Point(newHead.GetX() + 1, newHead.GetY()); break;
     }
 
     if (segments.size() > 1)
@@ -28,6 +28,14 @@ void Snake::Move(Direction dir) {
 
 Point Snake::Head() const {
     return segments.front();
+}
+
+void Snake::Grow() {
+    segments.push_back(segments.back());
+}
+
+const std::vector<Point>& Snake::GetSegments() const {
+    return segments;
 }
 
 bool Snake::operator==(const Snake& other) const {

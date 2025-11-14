@@ -1,8 +1,7 @@
 #pragma once
 #include <vector>
 #include "Point.hpp"
-
-enum Direction { Up, Down, Left, Right };
+#include "direction.hpp"
 
 class Snake {
 private:
@@ -14,6 +13,8 @@ public:
 
     void Move(Direction dir);
     Point Head() const;
+    void Grow();
+    const std::vector<Point>& GetSegments() const;
 
     bool operator==(const Snake& other) const;
     bool operator!=(const Snake& other) const;

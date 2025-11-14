@@ -1,24 +1,25 @@
 #pragma once
 #include <memory>
+
 #include "Snake.hpp"
 #include "Apple.hpp"
 #include "Board.hpp"
-#include "Painter.hpp"
+#include "abstract_painter.hpp"
 
 class GameEngine {
 private:
-    std::unique_ptr<Snake> _snake;
-    std::unique_ptr<Apple> _apple;
-    std::unique_ptr<Board> _board;
-    Painter2D _painter;
+    Snake _snake;
+    Apple _apple;
+    Board _board;
+    std::unique_ptr<AbstractPainter> _painter;
 
 public:
-    GameEngine();
+    GameEngine(int width, int height);
 
     void Init();
     void Run();
 
-    Snake& getSnake();
-    Apple& getApple();
-    Board& getBoard();
+    Snake GetSnake() const;
+    Apple GetApple() const;
+    Board GetBoard() const;
 };
