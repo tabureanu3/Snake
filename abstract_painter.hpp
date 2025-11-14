@@ -1,8 +1,14 @@
 #pragma once
 #include "Point.hpp"
 
+#include <vector>
+#include <string>
+
+using Sprite = std::vector<std::string>;
+
 struct AbstractPainter {
-    virtual void RenderSprite(Point from, Point to, char** sprite) = 0;
-    virtual void DisplayText(Point at, const char* message) = 0;
+    virtual void ClearScreen() = 0;
+    virtual void RenderSprite(const Point& from, const Point& to, const Sprite& sprite) = 0;
+    virtual void DisplayText(const Point& at, const std::string& message) = 0;
     virtual ~AbstractPainter() = default;
 };
