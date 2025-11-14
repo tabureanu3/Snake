@@ -30,6 +30,10 @@ Point Snake::Head() const {
     return segments.front();
 }
 
+const std::vector<Point>& Snake::GetSegments() const {
+    return segments;
+}
+
 bool Snake::operator==(const Snake& other) const {
     return segments == other.segments;
 }
