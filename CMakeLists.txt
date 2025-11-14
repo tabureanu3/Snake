@@ -3,10 +3,20 @@ project(Snake)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# include_directories(include) # Calea către fișierele header
-# link_directories(lib)        # Calea către bibliotecile externe (folosește doar dacă este necesar)
+# optimize for size in release mode
+set(CMAKE_CXX_FLAGS_RELEASE "-Os")
 
-file(GLOB SOURCES "*.cpp") # Colectează automat toate fișierele .cpp din src
+add_library(snake_data SHARED
+    "point.cpp"
+    "apple.cpp"
+    "board.cpp"
+    "direction.cpp"
+    "snake.cpp"
+)
+# create import library for Windows
+set_target_properties(snake_data PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
+file(GLOB SOURCES "painter.cpp" "engine.cpp" "main.cpp")
 add_executable(Snake ${SOURCES})
 
-# target_link_libraries(Snake love math) # Leagă bibliotecile
+target_link_libraries(Snake snake_data) # Leagă bibliotecile

@@ -11,7 +11,7 @@ Asigură-te că ai instalat g++ (de exemplu din MinGW).
 
 Deschide Command Prompt în folderul proiectului.
 
-Rulează comanda: 
+Rulează comanda:
 
 ```cmd
 build.cmd
@@ -49,7 +49,6 @@ cmake --build .
 După compilare, rulează: `snake.exe`.
 
 ## Structura proiectului
-
 
 - `*.hpp` – fișiere header cu declarațiile structurilor și claselor.
 - `*.cpp` – fișiere sursă cu implementarea metodelor.
