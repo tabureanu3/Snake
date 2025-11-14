@@ -1,9 +1,11 @@
 #pragma once
+
 #include <iostream>
+#include <string>
 
 class Point {
-public:
     int x, y;
+public:
 
     Point(int x = 0, int y = 0);
     Point(const Point& other);
@@ -12,6 +14,11 @@ public:
     bool operator==(const Point& other) const;
     bool operator!=(const Point& other) const;
 
-    friend std::ostream& operator<<(std::ostream& os, const Point& p);
-    friend std::istream& operator>>(std::istream& is, Point& p);
+    int GetX() const;
+    int GetY() const;
+
+    std::string ToString() const;
 };
+
+std::ostream& operator<<(std::ostream& os, const Point& p);
+std::istream& operator>>(std::istream& is, Point& p);
