@@ -2,11 +2,11 @@
 #include <cstdlib>  
 
 Board::Board(int w, int h) : width(w), height(h) {
-    srand(static_cast<unsigned int>(time(0))); // Seed for randomness
+    srand(static_cast<unsigned int>(time(0))); 
 }
 
 Point Board::GetRandomPosition() const {
-    // Simple implementation for demonstration purposes
+    
     return Point(rand() % width, rand() % height);
 }
 

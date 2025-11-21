@@ -12,7 +12,7 @@ RaylibPainter::~RaylibPainter() {
 }
 
 void RaylibPainter::ClearScreen() {
-    // fundal moale checkerboard, exact ca în Google Snake
+
     Color lightGreen = (Color){187, 220, 114, 255};
     Color darkGreen  = (Color){167, 205, 102, 255};
     int w = GetScreenWidth();
@@ -36,17 +36,17 @@ void RaylibPainter::RenderSprite(const Point& from, const Point& to, const Sprit
             float cy = py + PIXEL_SIZE / 2.0f;
 
             switch (pixel) {
-                // 🍎 Măr rotund, lucios, cu frunză mică
+                
                 case '@': {
-                    // umbră
+            
                     DrawCircle(cx + 2, cy + 3, PIXEL_SIZE * 0.38f, (Color){0, 0, 0, 40});
-                    // corp măr
+                    
                     DrawCircle(cx, cy, PIXEL_SIZE * 0.38f, (Color){230, 45, 35, 255});
-                    // luciu
+                    
                     DrawCircle(cx - 5, cy - 5, PIXEL_SIZE * 0.1f, (Color){255, 255, 255, 160});
-                    // codiță
+                    
                     DrawRectangle(cx - 1, cy - PIXEL_SIZE * 0.4f - 3, 2, 5, (Color){100, 60, 20, 255});
-                    // frunză mică
+                    
                     DrawTriangle(
                         (Vector2){cx + 1, cy - PIXEL_SIZE * 0.4f - 2},
                         (Vector2){cx + 5, cy - PIXEL_SIZE * 0.4f - 5},
@@ -55,16 +55,16 @@ void RaylibPainter::RenderSprite(const Point& from, const Point& to, const Sprit
                     break;
                 }
 
-                // 🟦 Cap șarpe – formă netedă, cu ochi mari
+        
                 case 'O': {
-                    // umbră
+                   
                     DrawCircle(cx + 2, cy + 2, PIXEL_SIZE * 0.42f, (Color){0, 0, 0, 35});
-                    // corp
+                    
                     DrawRectangleRounded(
                         (Rectangle){px, py, PIXEL_SIZE, PIXEL_SIZE},
                         0.9f, 10, (Color){70, 120, 255, 255});
 
-                    // ochi
+                  
                     DrawCircle(cx - 6, cy - 5, 3.5f, WHITE);
                     DrawCircle(cx + 6, cy - 5, 3.5f, WHITE);
                     DrawCircle(cx - 6, cy - 5, 1.7f, BLACK);
@@ -72,7 +72,6 @@ void RaylibPainter::RenderSprite(const Point& from, const Point& to, const Sprit
                     break;
                 }
 
-                // 🔵 Corp șarpe – rotunjit perfect, fără goluri
                 case 'o': {
                     DrawCircle(cx + 2, cy + 2, PIXEL_SIZE * 0.42f, (Color){0, 0, 0, 30});
                     DrawRectangleRounded(

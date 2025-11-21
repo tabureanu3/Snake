@@ -34,7 +34,7 @@ void GameEngine::Run() {
     int score = 0;
     bool gameOver = false;
 
-    const float moveDelay = 0.18f; // delay clar între pași (în secunde)
+    const float moveDelay = 0.18f;
     float moveTimer = 0.0f;
 
     while (!WindowShouldClose() && !gameOver) {
@@ -49,7 +49,7 @@ void GameEngine::Run() {
         if (key != '\0')
             newDir = DirectionFromChar(key);
 
-        // interzicem întoarcerea directă
+        
         if (!((dir == Direction::Up && newDir == Direction::Down) ||
               (dir == Direction::Down && newDir == Direction::Up) ||
               (dir == Direction::Left && newDir == Direction::Right) ||
@@ -57,12 +57,12 @@ void GameEngine::Run() {
             dir = newDir;
         }
 
-        // se mișcă doar la fiecare delay (nu pe fiecare frame)
+    
         if (moveTimer >= moveDelay) {
             _snake.Move(dir);
             moveTimer = 0.0f;
 
-            // coliziune cu corpul propriu
+        
             for (size_t i = 1; i < _snake.GetSegments().size(); ++i) {
                 if (_snake.Head() == _snake.GetSegments()[i]) {
                     gameOver = true;
@@ -70,13 +70,13 @@ void GameEngine::Run() {
                 }
             }
 
-            // coliziune cu margini
+            
             if (!_board.IsInside(_snake.Head())) {
                 gameOver = true;
                 break;
             }
 
-            // coliziune cu mărul
+            
             if (_snake.Head() == _apple.GetPosition()) {
                 _snake.Grow();
                 _apple = Apple(_board.GetRandomPosition());
@@ -101,7 +101,7 @@ void GameEngine::Run() {
         EndDrawing();
     }
 
-    // Game Over – rămâne ca în varianta ta
+   
     BeginDrawing();
     ClearBackground((Color){30, 0, 0, 255});
     std::string finalText = "GAME OVER!";
