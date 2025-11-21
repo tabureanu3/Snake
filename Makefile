@@ -4,7 +4,7 @@ CXXFLAGS = -std=c++20 -O2 -fno-common -I. \
 	-I$(ROOT_DIR)/dependencies/gcc-raylib/include \
 	-L$(ROOT_DIR)/dependencies/gcc-raylib/lib \
 	
-LINKFLAGS = -lraylibdll -lopengl32 -lgdi32 -lwinmm -lole32 -lcomdlg32
+LINKFLAGS = -lraylib -lopengl32 -lgdi32 -lwinmm -lole32 -lcomdlg32
 
 # directoare pentru build
 BINDIR = bin
@@ -36,15 +36,15 @@ all: prepare $(LIB) $(TARGET)
 prepare:
 	mkdir -p $(OBJDIR) $(BINDIR)
 
-# 1) Construim biblioteca statică din clasele de date
+
 $(LIB): $(DATA_OBJS)
 	ar rcs $(LIB) $(DATA_OBJS)
 
-# 2) Construim programul final care folosește biblioteca
+
 $(TARGET): $(LIB) $(OTHER_OBJS)
 	$(CC) $(CXXFLAGS) $(OTHER_OBJS) $(LIB) $(LINKFLAGS) -o $(TARGET)
 
-# 3) Regulă generală: compilăm orice .cpp în obj/Nume.o
+
 $(OBJDIR)/%.o: %.cpp
 	$(CC) $(CXXFLAGS) -c $< -o $@
 
