@@ -23,7 +23,7 @@ void Snake::Move(Direction dir) {
         case Direction::Right: newHead = Point(newHead.GetX() + 1, newHead.GetY()); break;
     }
 
-    // deplasare lină fără spații
+
     for (size_t i = segments.size() - 1; i > 0; --i)
         segments[i] = segments[i - 1];
 
@@ -33,7 +33,7 @@ void Snake::Move(Direction dir) {
 Point Snake::Head() const { return segments.front(); }
 
 void Snake::Grow() {
-    // adăugăm un nou segment exact în spatele ultimului, lipit
+    
     Point tail = segments.back();
     segments.push_back(tail);
 }

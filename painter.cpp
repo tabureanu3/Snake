@@ -2,7 +2,7 @@
 #include <iostream>
 
 void Painter2D::ClearScreen() {
-    std::cout << "\033[2J\033[1;1H"; // ANSI escape codes to clear terminal
+    std::cout << "\033[2J\033[1;1H"; 
 }
 
 void Painter2D::RenderSprite(const Point& from, const Point& to, const Sprite& sprite) {
