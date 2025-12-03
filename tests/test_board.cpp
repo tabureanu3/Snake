@@ -12,5 +12,8 @@ int main() {
     assert(b.IsInside(outside1) == false);
     assert(b.IsInside(outside2) == false);
 
+    Point rnd = b.GetRandomPosition();
+    assert(b.IsInside(rnd));
+
     return 0;
 }
