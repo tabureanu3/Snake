@@ -1,3 +1,12 @@
+/**
+ * @file Point.hpp
+ * @brief Clasă pentru coordonate bidimensionale.
+ *
+ * Proiect: Snake Game
+ * Autor: Lavinia Tabureanu
+ * An: 2025
+ */
+
 #pragma once
 
 #include <iostream>
@@ -5,8 +14,8 @@
 
 class Point {
     int x, y;
-public:
 
+public:
     Point(int x = 0, int y = 0);
     Point(const Point& other);
     Point& operator=(const Point& other);

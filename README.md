@@ -60,6 +60,11 @@ După compilare, rulează: `snake.exe`.
 
 - `*.hpp` – fișiere header cu declarațiile structurilor și claselor.
 - `*.cpp` – fișiere sursă cu implementarea metodelor.
+- `*.engine` – logica principală a jocului.
+- `*.RaylibPainter` – desenarea grafică în fereastră.
+- `*.Painter2D` – versiune alternativă ASCII.
+- `tests/` - teste unitare pentru clasele de date (Point, Apple, Board, Snake).
+- `Makefile` - script pentru compilarea aplicației și a testelor.
 - `build.cmd` – script pentru compilare manuală.
 - `.gitignore` – ignoră fișierele obiect și executabilele.
 - `README.md` – instrucțiuni de utilizare.
