@@ -82,4 +82,4 @@ clean:
 	rm -f $(OBJDIR)/*.o
 	rm -f $(LIB)
 	rm -f $(TARGET)
-	rm -f tests/test_*
+	
