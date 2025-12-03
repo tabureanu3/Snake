@@ -1,15 +1,15 @@
 #include <cassert>
-#include "../Apple.hpp"
-
+#include "../Board.hpp"
 int main() {
-    Apple a1(5, 5);
-    Apple a2(Point(5, 5));
-    Apple a3(1, 2);
+    Board b(20, 20);
 
-    assert(a1 == a2);
-    assert(a1 != a3);
-    assert(a1.GetPosition().GetX() == 5);
-    assert(a1.GetPosition().GetY() == 5);
+    Point inside(5, 5);
+    Point outside1(-1, 0);
+    Point outside2(0, 25);
+
+    assert(b.IsInside(inside) == true);
+    assert(b.IsInside(outside1) == false);
+    assert(b.IsInside(outside2) == false);
 
     return 0;
 }

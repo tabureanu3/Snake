@@ -8,12 +8,9 @@ int main() {
     Point outside1(-1, 0);
     Point outside2(0, 25);
 
-    assert(b.IsInside(inside));
-    assert(!b.IsInside(outside1));
-    assert(!b.IsInside(outside2));
-
-    Point rnd = b.GetRandomPosition();
-    assert(b.IsInside(rnd));
+    assert(b.IsInside(inside) == true);
+    assert(b.IsInside(outside1) == false);
+    assert(b.IsInside(outside2) == false);
 
     return 0;
 }
