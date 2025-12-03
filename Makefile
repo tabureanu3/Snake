@@ -4,7 +4,7 @@ CXXFLAGS = -std=c++20 -O2 -fno-common -I. \
 	-I$(ROOT_DIR)/dependencies/gcc-raylib/include
 
 LINKFLAGS = -L$(ROOT_DIR)/dependencies/gcc-raylib/lib \
-	-lraylibdll -lopengl32 -lgdi32 -lwinmm -lole32 -lcomdlg32
+	-lraylib -lopengl32 -lgdi32 -lwinmm -lole32 -lcomdlg32
 
 # Directoare
 BINDIR = bin
@@ -73,7 +73,6 @@ tests/test_board: tests/test_board.cpp $(LIB)
 
 tests/test_snake: tests/test_snake.cpp $(LIB)
 	$(CC) $(CXXFLAGS) $< $(LIB) -o $@
-
 
 # =========================
 #       Curățare
