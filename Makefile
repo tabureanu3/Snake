@@ -74,6 +74,7 @@ tests/test_board: tests/test_board.cpp $(LIB)
 tests/test_snake: tests/test_snake.cpp $(LIB)
 	$(CC) $(CXXFLAGS) $< $(LIB) -o $@
 
+
 # =========================
 #       Curățare
 # =========================

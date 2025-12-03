@@ -1,16 +1,12 @@
 #include <cassert>
-#include "../Board.hpp"
+#include "../board.hpp"
 
 int main() {
     Board b(20, 20);
 
-    Point inside(5, 5);
-    Point outside1(-1, 0);
-    Point outside2(0, 25);
-
-    assert(b.IsInside(inside) == true);
-    assert(b.IsInside(outside1) == false);
-    assert(b.IsInside(outside2) == false);
+    assert(b.IsInside(Point(5, 5)) == true);
+    assert(b.IsInside(Point(-1, 0)) == false);
+    assert(b.IsInside(Point(0, 25)) == false);
 
     Point rnd = b.GetRandomPosition();
     assert(b.IsInside(rnd));

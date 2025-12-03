@@ -1,12 +1,13 @@
 #include <cassert>
-#include "../Snake.hpp"
+#include "../snake.hpp"
+#include "../direction.hpp"
 
 int main() {
     Snake s;
 
-    Point head = s.Head();
+    Point oldHead = s.Head();
     s.Move(Direction::Right);
-    assert(s.Head().GetX() == head.GetX() + 1);
+    assert(s.Head().GetX() == oldHead.GetX() + 1);
 
     s.Grow();
     assert(s.GetSegments().size() == 2);
