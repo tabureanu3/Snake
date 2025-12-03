@@ -1,3 +1,18 @@
+/**
+ * @file GameEngine.hpp
+ * @brief Motorul principal al jocului Snake.
+ *
+ * Proiect: Snake Game
+ * Autor: Lavinia Tabureanu
+ * An: 2025
+ *
+ * Engine-ul coordonează logica jocului:
+ * - mișcarea șarpelui
+ * - coliziunile
+ * - generarea merelor
+ * - randarea
+ */
+
 #pragma once
 #include <memory>
 
@@ -14,9 +29,13 @@ private:
     std::unique_ptr<AbstractPainter> _painter;
 
 public:
+    /** Inițializează jocul cu o tablă de dimensiune dată. */
     GameEngine(int width, int height);
 
+    /** Inițializează starea internă. */
     void Init();
+
+    /** Rulează bucla principală a jocului. */
     void Run();
 
     Snake GetSnake() const;
