@@ -1,5 +1,5 @@
 #include <cassert>
-#include "../apple.hpp"
+#include "../Apple.hpp"
 
 int main() {
     Apple a1(5, 5);

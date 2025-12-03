@@ -1,5 +1,5 @@
 #include <cassert>
-#include "../point.hpp"
+#include "../Point.hpp"
 
 int main() {
     Point p1(3, 4);
