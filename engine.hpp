@@ -1,6 +1,8 @@
 /**
  * @file GameEngine.hpp
  * @brief Motorul principal al jocului Snake.
+ * @details Clasa GameEngine gestionează logica jocului Snake, inclusiv mișcarea șarpelui, coliziunile,
+ *  generarea merelor și randarea folosind un sistem de pictură abstract.
  *
  * Proiect: Snake Game
  * Autor: Lavinia Tabureanu
@@ -29,15 +31,28 @@ private:
     std::unique_ptr<AbstractPainter> _painter;
 
 public:
-    /** Inițializează jocul cu o tablă de dimensiune dată. */
+    /** Inițializează jocul cu o tablă de dimensiune dată. 
+     * @param width Lățimea tablei.
+     * @param height Înălțimea tablei.
+     * @return Obiectul GameEngine creat.
+    
+    */
     GameEngine(int width, int height);
 
-    /** Inițializează starea internă. */
+    /** Inițializează starea internă.
+     * @return void
+     */
     void Init();
 
-    /** Rulează bucla principală a jocului. */
+    /** Rulează bucla principală a jocului. 
+     * @return void
+    */
     void Run();
-
+    /**
+     * @return Șarpele curent.
+     * @return Apple-ul curent.
+     * @return Tabla curentă.
+   */
     Snake GetSnake() const;
     Apple GetApple() const;
     Board GetBoard() const;
