@@ -1,6 +1,8 @@
 /**
  * @file abstract_painter.hpp
  * @brief Interfața abstractă pentru toate sistemele de randare.
+ * @details Această interfață definește metodele esențiale pentru randarea grafică în jocul Snake.
+ 
  *
  * Proiect: Snake Game  
  * Autor: Lavinia Tabureanu  
@@ -22,7 +24,9 @@ using Sprite = std::vector<std::string>;
 
 struct AbstractPainter {
 
-    /** Șterge ecranul */
+    /** Șterge ecranul
+     * @brief Șterge conținutul ecranului pentru o nouă randare.
+     */
     virtual void ClearScreen() = 0;
 
     /**
@@ -35,8 +39,13 @@ struct AbstractPainter {
 
     /**
      * @brief Afișează text la o poziție dată.
+     * @param at Poziția unde va fi afișat textul.
+     * @param message Textul de afișat.
      */
     virtual void DisplayText(const Point& at, const std::string& message) = 0;
-
+    /**
+     * @brief Destructor virtual.
+     * @return Nu returnează nimic.
+     */
     virtual ~AbstractPainter() = default;
 };
